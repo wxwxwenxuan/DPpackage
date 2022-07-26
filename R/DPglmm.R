@@ -424,7 +424,7 @@ function(fixed,
 			 
             if(nfixed==0)
             {
-				fit0 <- startglmm(fixed=resp2~z-1+offset(roffset), random = ~ z - 1 | newid, family=family,q=q) 
+				fit0 <- startglmm(fixed=resp2~z-1, random = ~ z - 1 | newid, family=family,q=q) 
 				beta <- matrix(0,nrow=1,ncol=1)
 				b <- NULL 
 				for(i in 1:q)
@@ -435,7 +435,7 @@ function(fixed,
 			else
 			{
 
-				fit0 <- startglmm(fixed=resp2~z+x-1+offset(roffset), random = ~ z - 1 | newid, family=family,q=q) 
+				fit0 <- startglmm(fixed=resp2~z+x-1, random = ~ z - 1 | newid, family=family,q=q) 
 				beta <- fit0$beta[(q+1):(p+q)]
 				b <- NULL 
 				for(i in 1:q)
