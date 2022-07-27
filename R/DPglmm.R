@@ -403,7 +403,7 @@ function(fixed,
          {
 			 #library(nlme)
 			 #library(MASS)
-			 fit0 <- glmmPQL(fixed=fixed, random=random, family=family, verbose = FALSE,control=lmeControl(opt='optim'))) 
+			 fit0 <- glmmPQL(fixed=fixed, random=random, family=family, verbose = FALSE,control=lmeControl(opt='optim'))
 			 beta <- fit0$coeff$fixed
 			 b <- fit0$coeff$random$newid
 			 sigma <- getVarCov(fit0)[1:q,1:q]
